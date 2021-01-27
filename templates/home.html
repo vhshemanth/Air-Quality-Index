@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+</head>
+
+
+<body>
+<nav class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+
+        <div class=" col-md-6">
+            <h3 class="text-center">Air Quality Index Prediction</h3>
+            <h5 class="text-center">Banglore</h5>
+            <form action="\graph" method="post">
+                <label>Graph</label>
+                <select name="data" class="form-control">
+                    <option value="T">Average annual temperature</option>
+                    <option value="TM">Annual average maximum temperature:</option>
+                    <option value="Tm">Average annual minimum temperature</option>
+                    <option value="T">Rain or snow precipitation total annual</option>
+                    <option value="H">Annual average wind speed</option>
+                    <option value="VV">Number of days with rain</option>
+                    <option value="V">Number of days with snow</option>
+                    <option value="VM">Number of days with storm</option>
+                </select>
+
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-secondary">
+                </div>
+                <img src="{{graph}}">
+            </form>
+            <form action="\predict" method="post">
+                <div class="form-group">
+                    <label>	Average annual temperature: </label>
+                    <input type="number" class="form-control" name="T" required="required">
+                    <label>Annual average maximum temperature: </label>
+                    <input type="number" class="form-control" name="TM" required="required">
+                    <label>Average annual minimum temperature: </label>
+                    <input type="number" class="form-control" name="Tm" required="required">
+                    <label>Rain or snow precipitation total annual: </label>
+                    <input type="number" class="form-control" name="SLP" required="required">
+                    <label>Annual average wind speed: </label>
+                    <input type="number" class="form-control" name="H" required="required">
+                    <label>Number of days with rain: </label>
+                    <input type="number" class="form-control" name="VV" required="required">
+                    <label>	Number of days with snow: </label>
+                    <input type="number" class="form-control" name="V" required="required">
+                    <label>Number of days with storm: </label>
+                    <input type="number" class="form-control" name="VM" required="required">
+
+
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </div>
+                </div>
+
+
+            </form>
+            <br>
+            <br>
+            <h1>AQI2.5 Value is {{prediction}}</h1>
+            <p>Designed by Hemanth</p>
+        </div>
+    </div>
+</nav>
+</body>
+
+<style>
+
+.col-md-6{
+    margin: 20px;
+    background-image: linear-gradient(#CCCCFF, #FF99FF);
+    color: black;
+
+}
+
+
+
+
+
+
+
+
+</style>
+<style>
+body {
+  background-image: url('https://s3-us-gov-west-1.amazonaws.com/cg-c877c3f0-e413-40cd-a59c-ad2d6b211d1b/uploads/2016/05/ThinkstockPhotos-512883102.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+</style>
+
+</html>
